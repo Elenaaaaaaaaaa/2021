@@ -3,20 +3,40 @@ import {Navbar, Nav, Dropdown, Tabs, Table, Tab} from "react-bootstrap"
 import './App.css';
 import React, {Component} from "react";
 import {JournalTable} from './JournalTable';
+import Request from "./Services/Request";
+
 
 
 class App extends Component {
-  render() {
-    const students = [
-      {name: 'Иванов Иван Иванович', markPrIS: 5, markSII: 4},
-      {name: 'Петров Пётр Петрович', markPrIS: 3, markSII: 2}
-    ];
-    return (
-        <div className="App">
-          <JournalTable students={students}/>
-        </div>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+            activeGroup: 0,
+            students: null
+        };
+    }
+    componentDidMount() {
+        Request.getStudents().then((students) => {
+            this.setState({students: students});
+        });
+    }
+    render() {
+        return (
+            <div className="App">
+                {this.state.students ? <JournalTable
+                    students={this.state.students[this.state.activeGroup]}/> : null}
+                <button onClick={() => {
+                    this.setState({activeGroup: 0});
+                }}>Группа 1</button>
+                <button onClick={() => {
+                    this.setState({activeGroup: 1});
+                }}>Группа 2</button>
+                <button onClick={() => {
+                    this.setState({activeGroup: 2});
+                }}>Группа 3</button>
+            </div>
+        );
+    }
 }
 
 
