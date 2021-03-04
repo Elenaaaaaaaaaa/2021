@@ -17,6 +17,7 @@ class App extends Component {
     }
     componentDidMount() {
         Request.getStudents().then((students) => {
+            console.log(students);
             this.setState({students: students});
         });
     }

@@ -14,12 +14,15 @@ export class JournalTable extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {this.props.students.map((student, index) => {
+            {
+                console.log(this.props.students)};{
+                (Array.from(this.props.students)).map((student, index) => {
+                    console.log(this.props.students);
                 return <tr>
                     <td>{index + 1}</td>
                     <td>{student.name}</td>
-                    <td>{student.markPrIS}</td>
-                    <td>{student.markSII}</td>
+                    <td>{student.surname}</td>
+                    <td>{student.study_group_id}</td>
                 </tr>
             })}
             </tbody>
