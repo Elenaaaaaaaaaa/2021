@@ -57,13 +57,14 @@ public class StudentJdbc {
 
     }
 
-    public void UpdateStudent(Student student) {
+    public int UpdateStudent(Student student) {
         int status = jdbcTemplate.update("UPDATE STUDENT SET VALUES(?, ?, ?, ?)",
                 student.getId(), student.getSurname(),
                 student.getName(),student.getSecond_nameName());
         if(status == 0){
             CreateStudent(student);
         }
+        return status;
     }
 
 
