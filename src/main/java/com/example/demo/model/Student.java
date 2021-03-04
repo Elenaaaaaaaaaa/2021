@@ -59,29 +59,29 @@ public class Student
         return second_name;
     }
 
-    public void setSecond_name(String second_name)
-    {
-        this.second_name = second_name;
-    }
-    //
+//    public void setSecond_name(String second_name)
+//    {
+//        this.second_name = second_name;
+//    }
+//    //
     public int getStudy_group_id()
     {
         return study_group_id;
     }
-
-    public void setStudy_group_id(int study_group_id)
-    {
-        this.study_group_id = study_group_id;
-    }
-
-    public String getSecondName() {
-        return second_name;
-    }
-    public void setSecond_nameName(String second_name) {
-        this.second_name = second_name;
-    }
-
-    public Object getSecond_nameName() {return second_name;
-    }
+//
+//    public void setStudy_group_id(int study_group_id)
+//    {
+//        this.study_group_id = study_group_id;
+//    }
+//
+//    public String getSecondName() {
+//        return second_name;
+//    }
+//    public void setSecond_nameName(String second_name) {
+//        this.second_name = second_name;
+//    }
+//
+//    public Object getSecond_nameName() {return second_name;
+//    }
 
 }

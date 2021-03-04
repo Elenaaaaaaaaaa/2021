@@ -73,7 +73,8 @@ public class StudentJdbc {
                 rs.getInt("id"),
                 rs.getString("surname"),
                 rs.getString("name"),
-                rs.getString("second_name")
+                rs.getString("second_name"),
+                rs.getInt("study_group_id")
         );
     }
 
