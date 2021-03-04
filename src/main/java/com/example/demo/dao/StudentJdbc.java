@@ -46,7 +46,7 @@ public class StudentJdbc {
         this.jdbcTemplate.update(
                 "INSERT INTO STUDENT VALUES(?, ?, ?, ?)",
                 student.getId(), student.getSurname(),
-                student.getName(),student.getSecond_nameName());
+                student.getName(),student.getSecond_name());
     }
 
     //  Редактирование студента
@@ -60,7 +60,7 @@ public class StudentJdbc {
     public int UpdateStudent(Student student) {
         int status = jdbcTemplate.update("UPDATE STUDENT SET VALUES(?, ?, ?, ?)",
                 student.getId(), student.getSurname(),
-                student.getName(),student.getSecond_nameName());
+                student.getName(),student.getSecond_name());
         if(status == 0){
             CreateStudent(student);
         }
