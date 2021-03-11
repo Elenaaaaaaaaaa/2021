@@ -1,11 +1,13 @@
 package com.example.demo.dao;
 
 import com.example.demo.model.Mark;
+import com.example.demo.model.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Repository
 public class MarkJdbc{
@@ -33,4 +35,9 @@ public class MarkJdbc{
         String sql = "SELECT * FROM MARK WHERE name = ?";
         return jdbcTemplate.queryForObject(sql, Mark.class, mark);
     }
+
+//    public List<Student> getMarksbyStudent(int study_group_id){
+//        String sql = "SELECT * FROM STUDENT WHERE study_group_id = ?";
+//        return jdbcTemplate.query(sql, this::mapStudent, study_group_id);
+//    }
 }

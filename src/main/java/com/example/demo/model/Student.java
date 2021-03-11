@@ -74,9 +74,9 @@ public class Student
 //        this.study_group_id = study_group_id;
 //    }
 //
-//    public String getSecondName() {
-//        return second_name;
-//    }
+    public String getSecondName() {
+        return second_name;
+    }
 //    public void setSecond_nameName(String second_name) {
 //        this.second_name = second_name;
 //    }

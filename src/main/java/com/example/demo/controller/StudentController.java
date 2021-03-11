@@ -6,7 +6,7 @@ import com.example.demo.model.Student;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 public class StudentController {
 
