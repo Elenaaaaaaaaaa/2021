@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import { Button } from "react-bootstrap";
 import {JournalTable} from "./JournalTable"
+import {SubjectExTable} from "./subject_exTable"
 import Request from "./Services/Request"
 import "./App.css"
 
@@ -10,7 +11,8 @@ class App extends Component {
         super();
         this.state = {
             activeGroup: 0,
-            students: null
+            students: null,
+            journal: null,
         };
     }
     componentDidMount() {
@@ -19,13 +21,18 @@ class App extends Component {
             this.setState({students: students});
 
         });
+        Request.getJournal().then((journal) => {console.log(journal)
+        this.setState({journal: journal})})
     }
     render() {
-        console.log(this.state.students)
         return (
             <div className="App">
                 {this.state.students ? <JournalTable
                     students={this.state.students}/> : null}
+
+                {this.state.journal ? <SubjectExTable
+                    students={this.state.journal}/> : null}
+
                 <button onClick={() => {
                     this.setState({activeGroup: 0});
                 }}>Группа 1</button>
