@@ -22,22 +22,28 @@ public class StudentController {
             return studentJdbc.UpdateStudent(newStudent);
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             return -1;
         }
     }
 
-//    @GetMapping("/student/{id}")
-//    public Student getStudent(@PathVariable int id){
-//        return studentJdbc.get(id);
-//    }
+    @GetMapping("/student/{id}")
+    public Student getStudent(@PathVariable int id){
+        return studentJdbc.get(id);
+    }
 
-    @GetMapping("/student/group/{student_group_id}")
-    public List<Student> getStudentByGroup(@PathVariable int student_group_id){
+    @GetMapping("/student/group")
+    public List<Student> getStudentByGroup(@RequestParam(value="student_group_id") Integer student_group_id){
         return studentJdbc.getStudentByGroup(student_group_id);
     }
 
     @GetMapping("/student/all")
     public List<Student> getStudentByGroup(){
         return studentJdbc.getAll();
+    }
+
+    @DeleteMapping("/student/delete")
+    public void deleteStudent(@RequestParam(value="id") Integer id){
+        studentJdbc.delete(id);
     }
 }
